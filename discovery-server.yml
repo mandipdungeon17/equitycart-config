@@ -7,6 +7,7 @@ eureka:
   client:
     register-with-eureka: false
     fetch-registry: false
+    enabled: false
   server:
     enable-self-preservation: false
     eviction-interval-timer-in-ms: 10000
