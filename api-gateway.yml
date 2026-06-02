@@ -1,5 +1,6 @@
 server:
   port: 8080
+spring:
   cloud:
     gateway:
       routes:
@@ -27,3 +28,12 @@ server:
           uri: lb://notification-service
           predicates:
             - Path=/api/notifications/**
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,metrics,info
+      base-path: /actuator
+  endpoint:
+    health:
+      show-details: always
