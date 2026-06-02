@@ -1,7 +1,5 @@
 server:
   port: 8085
 spring:
-  application:
-    name: market-data-service
   datasource:
     url: jdbc:postgresql://localhost:5432/equitycart_market_data

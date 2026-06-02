@@ -1,7 +1,5 @@
 server:
   port: 8086
 spring:
-  application:
-    name: ledger-service
   datasource:
     url: jdbc:postgresql://localhost:5432/equitycart_ledger
