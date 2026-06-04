@@ -20,9 +20,10 @@ eureka:
       defaultZone: http://localhost:8761/eureka/
 
 jwt:
-  secret: dGhpcyBpcyBhIHNlY3JldCBrZXkgZm9yIGVxdWl0eWNhcnQgand0IHRva2Vu  # base64 of a 256-bit key
-  access-token-expiry: 900000    # 15 minutes in milliseconds
-  refresh-token-expiry: 7  # 7 days in days
+  secret: dGhpcyBpcyBhIHNlY3JldCBrZXkgZm9yIGVxdWl0eWNhcnQgand0IHRva2Vu # base64 of a 256-bit key
+  access-token-expiry: 900000 # 15 minutes in milliseconds
+  refresh-token-expiry: 7 # 7 days in days
+
 management:
   endpoints:
     web:
