@@ -10,6 +10,11 @@ logging:
   level:
     com.equitycart: INFO
 
+#  Root Cause: Hyper-V Virtual Network Adapter
+#  IE4LLT9F6RS54.mshome.net is your machine's hostname as seen by the Hyper-V virtual NAT adapter — created by Docker Desktop or WSL2.
+#  When Eureka calls InetAddress.getLocalHost().getHostName() to determine what hostname to register with, Java returns this Hyper-V interface's hostname instead of localhost.
+#  The gateway then tries to route to IE4LLT9F6RS54.mshome.net:8081 — a hostname that doesn't resolve via DNS — and fails with UnknownHostException.
+#  This is extremely common on Windows machines with Docker Desktop or WSL2 installed.
 eureka:
   instance:
     prefer-ip-address: true
