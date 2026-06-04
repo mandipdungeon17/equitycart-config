@@ -5,6 +5,12 @@ spring:
       ddl-auto: validate
   kafka:
     bootstrap-servers: localhost:9092
+
 logging:
   level:
     com.equitycart: INFO
+
+eureka:
+  instance:
+    prefer-ip-address: true
+    ip-address: 127.0.0.1
