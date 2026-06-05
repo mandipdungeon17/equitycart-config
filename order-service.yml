@@ -3,6 +3,37 @@ server:
 spring:
   datasource:
     url: jdbc:postgresql://localhost:5432/equitycart_order
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+  data:
+    redis:
+      host: localhost
+      port: 6379
+      timeout: 2000ms
+  cache:
+    type: redis
+    redis:
+      time-to-live: 600000   # 10 minutes in milliseconds
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,metrics,info
+      base-path: /actuator
+  endpoint:
+    health:
+      show-details: always
+
 eureka:
   client:
     serviceUrl:
