@@ -1,9 +1,53 @@
 server:
   port: 8087
+
+equitycart:
+  notification:
+    channel: LOG
+    webhook-url: http://localhost:9999/webhook
+    recipient-email: demo@equitycart.local
+
 spring:
+  mail:
+    host: localhost
+    port: 1025
+
   datasource:
     url: jdbc:postgresql://localhost:5432/equitycart_notification
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+  kafka:
+    # Examples of multiple broker : bootstrap-servers: kafka-1:9092,kafka-2:9092,kafka-3:9092
+    consumer:
+      group-id: equitycart-portfolio-group
+      auto-offset-reset: earliest # Start from the beginning if no committed offset exists (don't miss events)
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      properties:
+        spring.json.trusted.packages: com.equitycart.commons.event
+
 eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:8761/eureka/
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,metrics,info
+      base-path: /actuator
+  endpoint:
+    health:
+      show-details: always
