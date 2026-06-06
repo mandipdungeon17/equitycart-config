@@ -6,6 +6,7 @@ spring:
     username: postgres
     password: postgres
     driver-class-name: org.postgresql.Driver
+
   jpa:
     hibernate:
       ddl-auto: update
@@ -14,9 +15,17 @@ spring:
       hibernate:
         format_sql: true
         dialect: org.hibernate.dialect.PostgreSQLDialect
+
   data:
     mongodb:
       uri: mongodb://localhost:27017/equitycart_portfolio
+
+  batch:
+    jdbc:
+      initialize-schema: always
+    job:
+      enabled: false
+
   kafka:
     # Examples of multiple broker : bootstrap-servers: kafka-1:9092,kafka-2:9092,kafka-3:9092
     consumer:
