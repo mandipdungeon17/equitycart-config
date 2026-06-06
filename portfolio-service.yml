@@ -27,6 +27,10 @@ spring:
       properties:
         spring.json.trusted.packages: com.equitycart.commons.event
 
+alphaVantage:
+  api-key: ${ALPHA_VANTAGE_API_KEY:GABC5OWOK7YA1TG9}
+  base-url: https://www.alphavantage.co
+
 eureka:
   client:
     serviceUrl:
