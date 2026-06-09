@@ -20,12 +20,6 @@ spring:
     mongodb:
       uri: mongodb://localhost:27017/equitycart_portfolio
 
-  batch:
-    jdbc:
-      initialize-schema: always
-    job:
-      enabled: false
-
   kafka:
     # Examples of multiple broker : bootstrap-servers: kafka-1:9092,kafka-2:9092,kafka-3:9092
     consumer:
