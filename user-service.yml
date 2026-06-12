@@ -2,7 +2,7 @@ server:
   port: 8081
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/equitycart_user
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/equitycart_user}
     username: postgres
     password: postgres
     driver-class-name: org.postgresql.Driver
@@ -18,18 +18,3 @@ jwt:
   secret: dGhpcyBpcyBhIHNlY3JldCBrZXkgZm9yIGVxdWl0eWNhcnQgand0IHRva2Vu # base64 of a 256-bit key
   access-token-expiry: 900000 # 15 minutes in milliseconds
   refresh-token-expiry: 7 # 7 days in days
-
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://localhost:8761/eureka/
-
-management:
-  endpoints:
-    web:
-      exposure:
-        include: health,metrics,info
-      base-path: /actuator
-  endpoint:
-    health:
-      show-details: always

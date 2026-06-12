@@ -2,7 +2,7 @@ server:
   port: 8088
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/equitycart_order
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/equitycart_order}
     username: postgres
     password: postgres
     driver-class-name: org.postgresql.Driver
@@ -16,25 +16,10 @@ spring:
         dialect: org.hibernate.dialect.PostgreSQLDialect
   data:
     redis:
-      host: localhost
+      host: ${SPRING_DATA_REDIS_HOST:localhost}
       port: 6379
       timeout: 2000ms
   cache:
     type: redis
     redis:
       time-to-live: 600000   # 10 minutes in milliseconds
-
-management:
-  endpoints:
-    web:
-      exposure:
-        include: health,metrics,info
-      base-path: /actuator
-  endpoint:
-    health:
-      show-details: always
-
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://localhost:8761/eureka/

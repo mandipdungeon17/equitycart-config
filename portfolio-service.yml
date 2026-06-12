@@ -2,7 +2,7 @@ server:
   port: 8084
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/equitycart_portfolio
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/equitycart_portfolio}
     username: postgres
     password: postgres
     driver-class-name: org.postgresql.Driver
@@ -18,7 +18,7 @@ spring:
 
   data:
     mongodb:
-      uri: mongodb://localhost:27017/equitycart_portfolio
+      uri: ${SPRING_DATA_MONGODB_URI:mongodb://localhost:27017/equitycart_portfolio}
 
   kafka:
     # Examples of multiple broker : bootstrap-servers: kafka-1:9092,kafka-2:9092,kafka-3:9092
@@ -33,18 +33,3 @@ spring:
 alphaVantage:
   api-key: ${ALPHA_VANTAGE_API_KEY:GABC5OWOK7YA1TG9}
   base-url: https://www.alphavantage.co
-
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://localhost:8761/eureka/
-
-management:
-  endpoints:
-    web:
-      exposure:
-        include: health,metrics,info
-      base-path: /actuator
-  endpoint:
-    health:
-      show-details: always

@@ -32,16 +32,3 @@ spring:
           uri: lb://product-service
           predicates:
               - Path=/api/products/**
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://localhost:8761/eureka/
-management:
-  endpoints:
-    web:
-      exposure:
-        include: health,metrics,info
-      base-path: /actuator
-  endpoint:
-    health:
-      show-details: always
