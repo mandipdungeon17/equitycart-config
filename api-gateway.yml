@@ -38,6 +38,4 @@ spring:
 equitycart:
   gateway:
     security:
-      open-paths:
-        - /api/auth/**
-        - /actuator/**
+      open-paths: /api/auth/**, /actuator/**
