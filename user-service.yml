@@ -1,10 +1,6 @@
 server:
   port: 8081
 
-equitycart:
-  security:
-    enabled: true
-
 spring:
   datasource:
     url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/equitycart_user}
