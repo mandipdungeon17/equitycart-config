@@ -15,6 +15,11 @@ logging:
   level:
     com.equitycart: INFO
 
+jwt:
+  secret: ${JWT_SECRET:dGhpcyBpcyBhIHNlY3JldCBrZXkgZm9yIGVxdWl0eWNhcnQgand0IHRva2Vu} # base64 of a 256-bit key
+  access-token-expiry: 900000 # 15 minutes in milliseconds
+  refresh-token-expiry: 7 # 7 days in days
+
 #  Root Cause: Hyper-V Virtual Network Adapter
 #  IE4LLT9F6RS54.mshome.net is your machine's hostname as seen by the Hyper-V virtual NAT adapter — created by Docker Desktop or WSL2.
 #  When Eureka calls InetAddress.getLocalHost().getHostName() to determine what hostname to register with, Java returns this Hyper-V interface's hostname instead of localhost.

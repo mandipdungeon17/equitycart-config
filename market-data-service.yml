@@ -1,6 +1,10 @@
 server:
   port: 8085
 
+equitycart:
+  security:
+    enabled: true
+
 spring:
   data:
     mongodb:

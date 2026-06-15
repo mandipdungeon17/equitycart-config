@@ -1,5 +1,10 @@
 server:
   port: 8088
+
+equitycart:
+  security:
+    enabled: true
+
 spring:
   datasource:
     url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/equitycart_order}
@@ -22,4 +27,4 @@ spring:
   cache:
     type: redis
     redis:
-      time-to-live: 600000   # 10 minutes in milliseconds
+      time-to-live: 600000 # 10 minutes in milliseconds

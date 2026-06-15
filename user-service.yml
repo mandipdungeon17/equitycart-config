@@ -1,5 +1,10 @@
 server:
   port: 8081
+
+equitycart:
+  security:
+    enabled: true
+
 spring:
   datasource:
     url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/equitycart_user}
@@ -14,7 +19,3 @@ spring:
       hibernate:
         format_sql: true
         dialect: org.hibernate.dialect.PostgreSQLDialect
-jwt:
-  secret: dGhpcyBpcyBhIHNlY3JldCBrZXkgZm9yIGVxdWl0eWNhcnQgand0IHRva2Vu # base64 of a 256-bit key
-  access-token-expiry: 900000 # 15 minutes in milliseconds
-  refresh-token-expiry: 7 # 7 days in days
