@@ -1,37 +1,39 @@
 server:
   port: 8080
+
 spring:
   cloud:
     gateway:
-      routes:
-        - id: user-service
-          uri: lb://user-service #  lb - load balancer, service discovery
-          predicates:
-            - Path=/api/auth/**,/api/users/**
-        - id: order-service
-          uri: lb://order-service
-          predicates:
-            - Path=/api/order/**, /api/cart/**
-        - id: portfolio-service
-          uri: lb://portfolio-service
-          predicates:
-            - Path=/api/portfolio/**
-        - id: market-data-service
-          uri: lb://market-data-service
-          predicates:
-            - Path=/api/market-data/**
-        - id: ledger-service
-          uri: lb://ledger-service
-          predicates:
-            - Path=/api/ledger/**
-        - id: notification-service
-          uri: lb://notification-service
-          predicates:
-            - Path=/api/notifications/**
-        - id: product-service
-          uri: lb://product-service
-          predicates:
-              - Path=/api/products/**
+      webflux:
+        routes:
+          - id: user-service
+            uri: lb://user-service #  lb - load balancer, service discovery
+            predicates:
+              - Path=/api/auth/**,/api/users/**
+          - id: order-service
+            uri: lb://order-service
+            predicates:
+              - Path=/api/order/**, /api/cart/**
+          - id: portfolio-service
+            uri: lb://portfolio-service
+            predicates:
+              - Path=/api/portfolio/**
+          - id: market-data-service
+            uri: lb://market-data-service
+            predicates:
+              - Path=/api/market-data/**
+          - id: ledger-service
+            uri: lb://ledger-service
+            predicates:
+              - Path=/api/ledger/**
+          - id: notification-service
+            uri: lb://notification-service
+            predicates:
+              - Path=/api/notifications/**
+          - id: product-service
+            uri: lb://product-service
+            predicates:
+                - Path=/api/products/**
 
 equitycart:
   gateway:
