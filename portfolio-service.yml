@@ -5,6 +5,11 @@ equitycart:
   security:
     enabled: true
 
+  sell-to-spend:
+    strategy: saga    # "transactional" (default) or "saga"
+  saga:
+    timeout-seconds: 30
+
 spring:
   datasource:
     url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/equitycart_portfolio}
