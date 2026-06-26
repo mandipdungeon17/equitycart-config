@@ -3,7 +3,8 @@ server:
 
 equitycart:
   security:
-    enabled: true
+    mode: custom
+
   notification:
     channel: ${NOTIFICATION_CHANNEL:LOG}
     webhook-url: ${NOTIFICATION_WEBHOOK_URL:http://localhost:9999/webhook}

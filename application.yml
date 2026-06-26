@@ -3,6 +3,13 @@ spring:
   jpa:
     hibernate:
       ddl-auto: validate
+
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          jwk-set-uri: ${KEYCLOAK_JWKS_URI:http://localhost:8180/realms/equitycart/protocol/openid-connect/certs}
+
   kafka:
     bootstrap-servers: ${SPRING_KAFKA_BOOTSTRAP_SERVERS:localhost:9092}
     producer:

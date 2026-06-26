@@ -3,7 +3,7 @@ server:
 
 equitycart:
   security:
-    enabled: true
+    mode: custom
 
 spring:
   datasource:
