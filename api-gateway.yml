@@ -34,6 +34,25 @@ spring:
           predicates:
               - Path=/api/products/**, /api/categories/**, /api/brands/**, /api/brand-ticker-mappings/**
 
+      default-filters:
+        - name: RequestRateLimiter
+          args:
+            redis-rate-limiter.replenishRate: 10    # tokens added per second
+            redis-rate-limiter.burstCapacity: 20    # max tokens in bucket
+            redis-rate-limiter.requestedTokens: 1   # tokens consumed per request
+            key-resolver: "#{@userKeyResolver}"     # SpEL reference to bean
+
+  data:
+    redis:
+      host: ${SPRING_DATA_REDIS_HOST:localhost}
+      port: 6379
+
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          jwk-set-uri: ${KEYCLOAK_JWKS_URI:http://localhost:8180/realms/equitycart/protocol/openid-connect/certs}
+
 equitycart:
   gateway:
     security:

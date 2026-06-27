@@ -3,7 +3,7 @@ server:
 
 equitycart:
   security:
-    mode: custom
+    mode: oauth2
 
   notification:
     channel: ${NOTIFICATION_CHANNEL:LOG}

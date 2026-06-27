@@ -3,7 +3,7 @@ server:
 
 equitycart:
   security:
-    mode: custom
+    mode: oauth2
 
   sell-to-spend:
     strategy: saga    # "transactional" (default) or "saga"
