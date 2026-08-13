@@ -16,6 +16,13 @@ spring:
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
 
+  profiles:
+    active: cdc
+
+feature-flags:
+  portfolio:
+    cqrs-read-enabled: false  # Toggle: false=legacy path, true=CQRS path
+
 logging:
   pattern:
     console: "%d{yyyy-MM-dd HH:mm:ss} [%thread] [%X{correlationId}] %-5level %logger{36} - %msg%n"
