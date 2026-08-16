@@ -19,6 +19,11 @@ spring:
   profiles:
     active: cdc
 
+# application.yml (config-driven)
+equitycart:
+  flash-sale:
+    lock-ttl-seconds: 10l  # Monolith: 10s, Distributed: 30s
+
 feature-flags:
   portfolio:
     cqrs-read-enabled: false  # Toggle: false=legacy path, true=CQRS path
