@@ -16,9 +16,6 @@ spring:
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
 
-  profiles:
-    active: cdc
-
 # application.yml (config-driven)
 equitycart:
   flash-sale:
