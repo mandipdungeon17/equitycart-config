@@ -19,7 +19,7 @@ spring:
 # application.yml (config-driven)
 equitycart:
   flash-sale:
-    lock-ttl-seconds: 10l  # Monolith: 10s, Distributed: 30s
+    lock-ttl-seconds: 10  # Monolith: 10s, Distributed: 30s
 
 feature-flags:
   portfolio:
