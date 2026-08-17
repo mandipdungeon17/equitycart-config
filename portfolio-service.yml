@@ -10,6 +10,11 @@ equitycart:
   saga:
     timeout-seconds: 30
 
+  alerts:
+    evaluation:
+      fixed-delay-ms: 5000
+      initial-delay-ms: 10000
+
 spring:
   datasource:
     url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/equitycart_portfolio}
